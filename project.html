@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Demo App</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+    <script src="app.js"></script>
+  </head>
+  <body ng-app="demo">
+    <div ng-controller="demoCtrl">
+      <div class="header">
+        <div class="tifhfhhhghghggytleContainer">
+          <img src="image.jpg" alt="logo" class="logo" />
+          <h1 class="title">{{title}}</h1>
+        </div>
+        <div class="profileContainer">
+          <h1>Yash</h1>
+        </div>
+      </div>
+      <div class="container">
+        <div class="formContainer">
+          <form name="employeeForm" class="employeeForm">
+            <div class="row">
+              <div class="col col-50">
+                <label for="firstName">First Name</label>
+                <input id="firstName" ng-model="firstName" name="firstName" />
+              </div>
+              <div class="col col-50">
+                <label for="lastName">Last Name</label>
+                <input id="lastName" ng-model="lastName" name="lastName" />
+              </div>
+            </div>
+            <div class="row">
+              <div class="col col-50">
+                <label for="jobTitle">Job Title</label><br>
+                <input id="jobTitle" ng-model="jobTitle" name="jobTitle" />
+              </div>
+              <div class="col col-50">
+                <label for="yoe">Years Of Experience</label>
+                <input id="yoe" ng-model="yoe" name="yoe" />
+              </div>
+            </div>
+            <button ng-click="submit()">Submit</button>
+          </form>
+        </div>
+      </div>
+      <div class="container">
+        <table class="table">
+          <tr>
+            <th>firstName</th>
+            <th>LastName</th>
+            <th>jobTitle</th>
+            <th>yoe</th>
+          </tr>
+
+          <tr ng-repeat="(key, value) in data">
+            <div class="val">
+            <td>{{value.firstName}}</td>
+            <td>{{value.lastName}}</td>
+            <td>{{value.jobTitle}}</td>
+            <td>{{value.yoe}}</td>
+          </div>
+          </tr>
+        </table>
+      </div>
+    </div>
+  </body>
+</html>
